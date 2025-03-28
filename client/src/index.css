@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-tajawal bg-dark text-light antialiased;
+    direction: rtl;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gold-rays {
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+  }
+  
+  .wave-border {
+    position: relative;
+  }
+  
+  .wave-border::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #1E88E5, #D4AF37, transparent);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, #1E88E5, #D4AF37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (max-width: 640px) {
+    .wave-border::after {
+      left: 15%;
+      width: 70%;
+    }
+  }
+}
