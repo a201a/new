@@ -1,13 +1,25 @@
 import Navbar from "@/components/Navbar";
-import SimpleHero from "@/components/SimpleHero";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import TransformationSection from "@/components/TransformationSection";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      className="min-h-screen overflow-x-hidden"
+    >
       <Navbar />
-      <SimpleHero />
+      <HeroSection />
+      <AboutSection />
+      <BenefitsSection />
+      <TransformationSection />
       <Footer />
-    </div>
+    </motion.div>
   );
 }
