@@ -102,7 +102,7 @@ export default function BenefitsSection() {
               icon={benefit.icon}
               title={benefit.title}
               description={benefit.description}
-              variant={benefit.variant}
+              variant={benefit.variant as "primary" | "secondary"}
             />
           ))}
         </motion.div>
